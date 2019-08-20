@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>new balance</title>
+	<style>
+        html{
+			font: normal 12px '微软雅黑','Microsoft YaHei',serif;
+		}
+		body,p{
+			margin: 0;
+		}
+		
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style:none;
+		}
+		a{
+			color: #333;
+			text-decoration: none;
+		}
+		.wrapper{
+			width: 1200px;
+			margin: 0 auto;  /*盒子居中*/	
+			background-color: #fff;
+		}
+		.lwrapper{
+			float: left;
+			width: 300px;
+			margin-right:75px;  /*盒子居左*/
+			position: absolute;
+			left: 74.5px;	
+			background-color: #fff;	
+		}
+		.rwrapper{
+			width: 900px;
+			margin-left: 374.5px;   /*盒子居右*/	
+			background-color: #fff;	
+		}
+
+		/*顶端样式*/
+		.top{
+			height: 35px;
+			background-color: #000;
+			line-height: 2.5em;	
+			position: sticky;
+			top: 0px;
+		}
+		.top .left{
+			float: left;
+		}
+		.top a{
+			color: #fff;
+		}
+		.top > .left a:first-child{
+			margin-left: 210px;
+			font-size: 16px;
+		}
+		.top > .left a:last-child{
+			text-decoration: underline;
+			font-size: 16px;
+		}
+		.top > .left > a:hover{
+			text-decoration: underline;
+		}
+		.top .right{
+         float: right;
+		}
+		.top .right>ul>li > img{
+			border-left: 1px solid #ededed;
+			position: absolute;
+			top: 5px;
+			right: 75px;
+			padding-left: 5px;
+		}
+		.top .right>ul>li > a{
+		padding-right: 2em;
+		}
+		/*导航样式*/
+		.nav{
+			background-color: #fff;
+			border-bottom: 1px solid #ccc;
+			box-sizing: border-box;
+			box-shadow: 0 0 8px #ccc;
+			height: 60px;	
+			position: sticky;
+			top: 35px;
+		}
+		.nav .photo img{
+			float: left;
+		    margin-top: 3px;		
+		}
+		.nav .wenzi{
+			float: left;
+			font-size: 14px;
+			line-height: 60px;
+		}
+		.nav .wenzi >ul > li {
+			float: left;
+			margin-right: 30px;
+			font-weight: 600;
+		}
+		.nav .wenzi >ul > li:first-child{
+			margin-left: 15px;
+		}
+		/*页面导航样式*/
+		.pagenav{
+			height: 70px;
+			
+		}
+		.pagenav .wrapper >ul::after{
+        content: none;
+     	display: block;
+     	clear: both;
+		}
+		.pagenav .wrapper >ul >li{
+			line-height: 70px;
+			float: left;
+			margin-left: 15px;
+			color: #333;
+			font-size:14px; 
+		}
+		.pagenav .wrapper >ul >li:nth-child(4),
+		.pagenav .wrapper >ul >li:nth-child(5){
+			color: #ccc;
+		}
+		/*宣传图片样式*/
+		.xct{
+			background-color: #fff;
+		}
+		.xct .wrapper>ul::after{
+			display: block;
+			content: "";
+			clear: both;     
+		}
+		.xct .wrapper>ul>li{
+			float: left;
+		}
+
+		/*宽 200*5+50*4/
+		/*高 430 */
+		.xct .wrapper>ul>li{
+			float: left;
+			width: 198px;
+			height: 430px;	
+			margin-right: 50px;
+			text-align: center;
+			border: 1px solid #ccc;
+     	}
+     	.xct .wrapper>ul>li:hover{
+			border: 1px solid #333;
+		}
+     	.xct .wrapper>ul>li:last-child{
+     		margin-right: 0;
+     	}
+     	.xct .wrapper >ul> li> .picture{
+     		height: 343px;
+     		width: 168px;
+     		margin:15px;
+     	}
+     	.xct .wrapper >ul> li> .details{
+     		font-size: 16px;
+     	}
+     	/*在线客服样式*/
+     	.kefu{
+     		position: fixed;
+     		right: 0;
+     		top: 380px;
+     	}
+     	/*种类样式*/
+     	.type .rwrapper{
+     		height: 60px;
+     		/*background-color: #ccc;*/
+     	}
+     	.type .rwrapper>ul::after{
+     		display: block;
+     		content: "";
+     		clear: both;
+     	}
+     	.type .rwrapper>ul >li:first-child{
+     		/*text-align: center;*/
+     		font-size: 18px;
+     		float: left;
+     		line-height: 40px;
+     	}
+     	.type .rwrapper>ul >li >span:first-child{
+     		font-weight: 800;
+     	}
+     	.type .rwrapper>ul >li div {
+     		font-size: 16px;
+     		margin-left: 690px;
+     		border: 1px solid #333;
+     		line-height: 40px;
+     		width: 180px;
+     		margin-top: 50px;
+     	}
+     	/*休闲鞋样式*/
+     	.xiuxian .rwrapper .title{
+     		text-align: center;
+     		height: 100px;
+     	}
+     	.xiuxian .rwrapper .title > a{
+     		font-size: 25px;	
+     	}
+     	.xiuxian .rwrapper .title > a:hover{
+     		text-decoration: underline;
+     	}
+     	.xiuxian .rwrapper .title > p{
+     		color: #9c8ca9;
+     		font-size: 15px;
+     	}
+     	.xiuxian>ul>li {
+     		text-align: center;
+     	}
+     	.xiuxian .rwrapper>ul::after{
+			display: block;
+			content: "";
+			clear: both;     
+		}
+		.xiuxian .rwrapper>ul>li{
+			box-sizing: border-box;
+			float: left;	
+		}
+		.xiuxian .rwrapper>ul>li:hover{
+			border: 1px solid #ccc;
+		}
+		/*宽 225*4/
+		/*高 420 */
+		.xiuxian .rwrapper>ul>li{
+			float: left;
+			width: 225px;
+			height: 420px;	
+			text-align: center;
+     	}
+        .xiuxian .rwrapper >ul> li> .new{
+        	margin-top: 20px;
+        	margin-left: 20px;
+        	font-size: 14px;
+        	background-color: #333;
+        	color: #fff;
+        	text-align: center;
+        	width: 45px;
+        }
+     	.xiuxian .rwrapper >ul> li> .picture{
+     		height: 225px;
+        	width: 225px;	
+     	}
+     	.xiuxian .rwrapper >ul> li> .details{
+     		font-weight: 800;
+     		font-size: 14px;
+     	}
+     	.xiuxian .rwrapper >ul> li> .tubiao{
+     		margin-top: 40px;
+     		/*margin-bottom: 80px;*/
+     	}
+     	/*更多样式*/
+     	.more{
+     		padding-top: 10px;
+     		padding-bottom: 10px;
+     	}
+     	.more .rwrapper .morer{
+     		background-color: #cf0a2c;
+            width: 150px;
+            text-align: center;
+            margin-left: 375px;
+
+     	}
+     	.more .rwrapper .morer a{ 
+            font-size: 14px;
+            color: #fff;
+            line-height: 3em;
+     	}
+     	/*左侧样式*/
+     	.zuoce{
+     		/*height: 0px;*/
+     	}
+     	.zuoce .lwrapper{
+     		background-color: #ccc;
+     		position: sticky;
+     		top: 500px;
+     		left: 75px;
+
+     	}
+     	
+
+	</style>  	
+</head>
+<body>
+    <!-- 顶端开始 -->
+	<div class="top"> 
+    	<div class="left">
+    		<a href="">欢迎光临New Balance中国官方商城!新客注册即送350元礼券！新老客下单即享全场包邮！</a>
+    		<a href="">点击查看详情！</a>
+    	</div>
+    	<div class="right">
+    	<ul>
+    		<li>
+    		    <img src="./images/查找商店.png" alt="">
+    			<a href="">查找商店</a>
+    		</li>
+    	</ul>			
+    	</div>  
+	</div>
+	<!-- 顶端结束 -->
+	<!-- 导航开始 -->
+	<div class="nav">
+		<div class="photo">
+			<img src="./images/logo.png" alt="">
+		</div>
+		<div class="wenzi">
+			<ul>
+				<li>男子</li>
+				<li>女子</li>
+				<li>男孩</li>
+				<li>女孩</li>
+				<li>NB1定制</li>
+			</ul>
+		</div>
+		<div class="sousuo"></div>
+		<div class="denglu"></div>
+		<div class="gouwuche"></div>
+	</div>
+	<!-- 导航结束 -->
+	<!-- 页面导航开始 -->
+	<div class="pagenav">
+		<div class="wrapper">
+			<ul>
+				<li>
+				    <a href="">首页</a>
+				</li>
+				<li>
+					<p>/</p>
+				</li>
+				<li>
+				    <a href="">女子</a>
+				</li>
+				<li>
+					<p>/</p>
+				</li>
+				<li>
+				    <p>鞋子</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 页面导航结束 -->
+	<!-- 宣传图片开始 -->
+	<div class="xct">
+		<div class="wrapper">
+			<ul>
+				<li>
+					<div class="picture">
+						<img src="./images/1.jpg" alt="">
+					</div>
+					<div class="details">
+						<a href="">中性款 ></a>
+					</div>
+				</li>
+				<li>
+					<div class="picture">
+						<img src="./images/2.jpg" alt="">
+					</div>
+					<div class="details">
+						<a href="">休闲 ></a>
+					</div>
+				</li>
+				<li>
+					<div class="picture">
+						<img src="./images/3.jpg" alt="">
+					</div>
+					<div class="details">
+						<a href="">跑步 ></a>
+					</div>
+				</li>
+				<li>
+					<div class="picture">
+						<img src="./images/4.jpg" alt="">
+					</div>
+					<div class="details">
+						<a href="">训练 ></a>
+					</div>
+				</li>
+				<li>
+					<div class="picture">
+						<img src="./images/5.jpg" alt="">
+					</div>
+					<div class="details">
+						<a href="">服装 ></a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 宣传图片结束 -->
+	<!-- 在线客服开始 -->
+	<div class="kefu">
+		<img src="./images/在线客服.png" alt="">
+	</div>
+	<!-- 在线客服结束 -->
+	<!-- 种类开始 -->
+	<div class="type">
+		<div class="rwrapper">	
+		    <ul>
+		    	<li>
+		    		<span>鞋子</span>
+		    		<span>（175）</span>
+		    	</li>
+		    	<li>
+		    		<div>
+		    			<span>种类</span>
+		    			<img src="" alt="">
+		    		</div>
+		    	</li>
+		    </ul>
+		</div>
+	</div>
+	<!-- 种类结束 -->
+	<!-- 休闲鞋开始 -->
+	<div class="xiuxian">
+		<div class="rwrapper">
+		    <div class="title">
+			    <a href="">休闲</a>
+		        <p>女式休闲鞋</p>
+		    </div>	
+		    <ul>
+		    	<li> 
+		    	    <div class="new">
+		    	    	<p>new</p>
+		    	    </div>
+		    		<div class="picture">
+		    			<img src="./images/休闲鞋1.png" alt="">
+		    		</div>
+                    <div class="details">
+                    	<p>996系列女款复古休闲</p>
+                    	<p>鞋</p>
+                    	<p>¥699.00</p>	
+                    </div>
+                    <div class="tubiao">
+                    	<img src="./images/tubiao1.png" alt="">
+                    </div>
+		    	</li>
+		    	<li> 
+		    	    <div class="new">
+		    	    	<p>new</p>
+		    	    </div>
+		    		<div class="picture">
+		    			<img src="./images/休闲鞋2.png" alt="">
+		    		</div>
+                    <div class="details">
+                    	<p>996系列女款复古休闲</p>
+                    	<p>鞋</p>
+                    	<p>¥699.00</p>
+                    </div>
+                    <div class="tubiao">
+                    	<img src="./images/tubiao1.png" alt="">
+                    </div>
+		    	</li>
+		    	<li> 
+		    	    <div class="new">
+		    	    	<p>new</p>
+		    	    </div>
+		    		<div class="picture">
+		    			<img src="./images/休闲鞋3.png" alt="">
+		    		</div>
+                    <div class="details">
+                    	<p>996系列女款复古休闲</p>
+                    	<p>鞋</p>
+                    	<p>¥699.00</p>
+                    </div>
+                    <div class="tubiao">
+                    	<img src="./images/tubiao1.png" alt="">
+                    </div>
+		    	</li>
+		    	<li> 
+		    	    <div class="new">
+		    	    	<p>new</p>
+		    	    </div>
+		    		<div class="picture">
+		    			<img src="./images/休闲鞋4.png" alt="">
+		    		</div>
+                    <div class="details">
+                    	<p>996系列女款复古休闲</p>
+                    	<p>鞋</p>
+                    	<p>¥699.00</p>
+                    </div>
+                    <div class="tubiao">
+                    	<img src="./images/tubiao1.png" alt="">
+                    </div>
+		    	</li>
+		    	<li> 
+		    	    <div class="new">
+		    	    	<p>new</p>
+		    	    </div>
+		    		<div class="picture">
+		    			<img src="./images/休闲鞋5.png" alt="">
+		    		</div>
+                    <div class="details">
+                    	<p>996系列女款复古休闲</p>
+                    	<p>鞋</p>
+                    	<p>¥699.00</p>	
+                    </div>
+                    <div class="tubiao">
+                    	<img src="./images/tubiao1.png" alt="">
+                    </div>
+		    	</li>
+		    	<li> 
+		    	    <div class="new">
+		    	    	<p>new</p>
+		    	    </div>
+		    		<div class="picture">
+		    			<img src="./images/休闲鞋6.png" alt="">
+		    		</div>
+                    <div class="details">
+                    	<p>996系列女款复古休闲</p>
+                    	<p>鞋</p>
+                    	<p>¥699.00</p>
+                    </div>
+                    <div class="tubiao">
+                    	<img src="./images/tubiao1.png" alt="">
+                    </div>
+		    	</li>
+		    	<li> 
+		    	    <div class="new">
+		    	    	<p>new</p>
+		    	    </div>
+		    		<div class="picture">
+		    			<img src="./images/休闲鞋7.png" alt="">
+		    		</div>
+                    <div class="details">
+                    	<p>996系列女款复古休闲</p>
+                    	<p>鞋</p>
+                    	<p>¥699.00</p>
+                    </div>
+                    <div class="tubiao">
+                    	<img src="./images/tubiao1.png" alt="">
+                    </div>
+		    	</li>
+		    	<li> 
+		    	    <div class="new">
+		    	    	<p>new</p>
+		    	    </div>
+		    		<div class="picture">
+		    			<img src="./images/休闲鞋8.png" alt="">
+		    		</div>
+                    <div class="details">
+                    	<p>996系列女款复古休闲</p>
+                    	<p>鞋</p>
+                    	<p>¥699.00</p>
+                    </div>
+                    <div class="tubiao">
+                    	<img src="./images/tubiao1.png" alt="">
+                    </div>
+		    	</li>
+		    </ul>
+		</div>
+	</div>
+	<!-- 休闲鞋结束 -->
+	<!-- 更多开始 -->
+	<div class="more">
+	    <div class="rwrapper">
+	        <div class="morer">
+	        	<a href="#">更多信息（110）</a>
+	        </div>
+	    </div>
+	</div>
+	<div class="xiuxian">
+		<div class="rwrapper">
+		    <ul>
+		    	<li> 
+		    	    <div class="new">
+		    	    	<p>new</p>
+		    	    </div>
+		    		<div class="picture">
+		    			<img src="./images/休闲鞋1.png" alt="">
+		    		</div>
+                    <div class="details">
+                    	<p>996系列女款复古休闲</p>
+                    	<p>鞋</p>
+                    	<p>¥699.00</p>	
+                    </div>
+                    <div class="tubiao">
+                    	<img src="./images/tubiao1.png" alt="">
+                    </div>
+		    	</li>
+		    	<li> 
+		    	    <div class="new">
+		    	    	<p>new</p>
+		    	    </div>
+		    		<div class="picture">
+		    			<img src="./images/休闲鞋2.png" alt="">
+		    		</div>
+                    <div class="details">
+                    	<p>996系列女款复古休闲</p>
+                    	<p>鞋</p>
+                    	<p>¥699.00</p>
+                    </div>
+                    <div class="tubiao">
+                    	<img src="./images/tubiao1.png" alt="">
+                    </div>
+		    	</li>
+		    	<li> 
+		    	    <div class="new">
+		    	    	<p>new</p>
+		    	    </div>
+		    		<div class="picture">
+		    			<img src="./images/休闲鞋3.png" alt="">
+		    		</div>
+                    <div class="details">
+                    	<p>996系列女款复古休闲</p>
+                    	<p>鞋</p>
+                    	<p>¥699.00</p>
+                    </div>
+                    <div class="tubiao">
+                    	<img src="./images/tubiao1.png" alt="">
+                    </div>
+		    	</li>
+		    	<li> 
+		    	    <div class="new">
+		    	    	<p>new</p>
+		    	    </div>
+		    		<div class="picture">
+		    			<img src="./images/休闲鞋4.png" alt="">
+		    		</div>
+                    <div class="details">
+                    	<p>996系列女款复古休闲</p>
+                    	<p>鞋</p>
+                    	<p>¥699.00</p>
+                    </div>
+                    <div class="tubiao">
+                    	<img src="./images/tubiao1.png" alt="">
+                    </div>
+		    	</li>
+		    	<li> 
+		    	    <div class="new">
+		    	    	<p>new</p>
+		    	    </div>
+		    		<div class="picture">
+		    			<img src="./images/休闲鞋5.png" alt="">
+		    		</div>
+                    <div class="details">
+                    	<p>996系列女款复古休闲</p>
+                    	<p>鞋</p>
+                    	<p>¥699.00</p>	
+                    </div>
+                    <div class="tubiao">
+                    	<img src="./images/tubiao1.png" alt="">
+                    </div>
+		    	</li>
+		    	<li> 
+		    	    <div class="new">
+		    	    	<p>new</p>
+		    	    </div>
+		    		<div class="picture">
+		    			<img src="./images/休闲鞋6.png" alt="">
+		    		</div>
+                    <div class="details">
+                    	<p>996系列女款复古休闲</p>
+                    	<p>鞋</p>
+                    	<p>¥699.00</p>
+                    </div>
+                    <div class="tubiao">
+                    	<img src="./images/tubiao1.png" alt="">
+                    </div>
+		    	</li>
+		    	<li> 
+		    	    <div class="new">
+		    	    	<p>new</p>
+		    	    </div>
+		    		<div class="picture">
+		    			<img src="./images/休闲鞋7.png" alt="">
+		    		</div>
+                    <div class="details">
+                    	<p>996系列女款复古休闲</p>
+                    	<p>鞋</p>
+                    	<p>¥699.00</p>
+                    </div>
+                    <div class="tubiao">
+                    	<img src="./images/tubiao1.png" alt="">
+                    </div>
+		    	</li>
+		    	<li> 
+		    	    <div class="new">
+		    	    	<p>new</p>
+		    	    </div>
+		    		<div class="picture">
+		    			<img src="./images/休闲鞋8.png" alt="">
+		    		</div>
+                    <div class="details">
+                    	<p>996系列女款复古休闲</p>
+                    	<p>鞋</p>
+                    	<p>¥699.00</p>
+                    </div>
+                    <div class="tubiao">
+                    	<img src="./images/tubiao1.png" alt="">
+                    </div>
+		    	</li>
+		    </ul>
+		</div>
+	</div>
+	<!-- 更多结束 -->
+	<!-- 左侧开始 -->
+	<div class="zuoce" >
+		<div class="lwrapper">
+			<ul>
+				<li><a href="">休闲</a></li>
+				<li><a href="">凉鞋</a></li>
+				<li><a href="">跑步</a></li>
+				<li><a href="">训练</a></li>
+				<li><a href="">英美产</a></li>
+				<li><a href="">中性款</a></li>
+			</ul>
+		</div>
+    </div>
+	<!-- 左侧结束 -->
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+</body>
+</html>
