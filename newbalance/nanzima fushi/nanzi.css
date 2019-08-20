@@ -1,0 +1,508 @@
+html{
+	font:normal normal 14px '微软雅黑','microsoft YaHei',serif;
+}
+body,ul,ol,h1,h2,h3,p{
+	margin:0;
+	padding:0;
+}
+ul,ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #333;
+}
+
+
+html,body,.wrapper{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+/*head开始*/
+.head{
+	margin: 0 auto;
+	width: 100%;
+}
+.head .one{
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #333;
+}
+.head .one a{
+	color: #fff;
+}
+.head .one .left{
+	flex: 9;
+}
+.head .one .left:hover a{
+	text-decoration-line: underline;
+}
+.head .one .left a{
+	padding-left: 20%;
+	line-height: 2em;
+	font-size: 15px;
+}
+.head .one .left a span:last-child{
+	text-decoration-line: underline;
+}
+.head .one .right{
+	flex: 2;
+}
+.head .one .right a{
+	line-height: 2em;
+	font-size: 10px;
+	border-left: 1px solid #fff;
+}
+.head .one .right:hover a{
+	text-decoration-line: underline;
+}
+.head .one .right a i{
+	font-size: 18px;
+}
+.head .two{
+	display: flex;
+	height: 55px;
+	line-height: 55px;
+	border: 2px solid #ededed;
+}
+.head .two .logo{
+	width: 80px;
+}
+.head .two .logo img{
+	margin-top: 3px;
+	width: 100%;
+}
+.head .two .nav ul{
+	width: 400px;
+}
+.head .two .nav ul::after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.head .two .nav >ul > li{
+	float: left;
+	width: 70px;
+	margin-left: 5px;
+	text-align: center;
+}
+.head .two .nav >ul > li:first-child{
+	margin-left: 20px;
+}
+.head .two .nav >ul > li:hover a{
+	color:red; 
+}
+.head .two .search-box{
+	padding-left: 200px;
+	padding-top: 5px;
+}
+.head .two .search-box .search{
+	width: 360px;
+	line-height: 36px;
+	border: 1px solid #ededed;
+}
+.head .two .search-box .search input{
+	width: 90%;
+	height: 38px;
+	border: none;
+}
+.head .two .customer{
+	flex: 1;
+}
+.head .two .customer ul::after{
+	display: block;
+	content: "";
+	clear: both;
+}
+.head .two .customer li{
+	margin-right: 20px;
+	float: left;
+}
+.head .two .customer li:hover a:last-child{
+	color: red;
+}
+.head .two .customer li:first-child{
+	margin-right: 10px;
+	margin-left: 30px;
+}
+.head .two .customer li i{
+	font-size: 16px;
+}
+/*container开始*/
+.container{
+	flex: 1;
+	overflow-y: auto;
+	position: relative;
+	/*margin:0 auto;*/
+	width: 100%;
+}
+.container .top {
+	position: absolute;
+	left: 90px;
+	top: 30px;
+}
+.container .top div{
+	float: left;
+	width: 40px;
+	text-align: center;
+}
+.container .top .one:hover a{
+	color: red;
+}
+.container .top .two{
+	color: #999;
+}
+.container .left{
+	float: left;
+	margin-left: 90px;
+	margin-top: 92px;
+	width: 270px;
+}
+.container .left .first{
+	margin-top: 28px;
+	line-height: 3em;
+}
+.container .left .second{
+	text-indent: 2em;
+	background-color: #f7f7f7;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+}
+.container .left .second ul li{
+	line-height: 2em;
+}
+.container .left .second ul li:hover a{
+	color: red;
+	text-decoration-line: underline;
+}
+.container .left .second ul li:first-child{
+	line-height: 45px;
+	text-indent: 1em;
+}
+.container .left .third ul li{
+	line-height: 3em;
+	text-indent: 1em;
+}
+.container .left .third ul li img{
+	height: 12px;
+}
+.container .left .third ul li:hover a{
+	color: red;
+}
+.container .left .third ul li:first-child{
+	margin-top: 29px;
+	line-height: 32px;
+}
+.container .left .third ul .a:hover a{/*第一个li*/
+	color: #ededed;
+}
+.container .left .fourth{
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+}
+.container .left .fourth ul li{
+	line-height: 4em;
+	text-indent: 1em;
+}
+.container .left .fourth ul li img{
+	height: 12px;
+}
+.container .left .fourth ul li:hover a{
+	color: red;
+}
+.container .left .fourth ul li:first-child{
+	margin-top: 9px;
+	line-height: 38px;
+}
+.container .left .fourth  ul .a:hover a{/*第一个li*/
+	color: #ededed;
+}
+/*container 右边*/
+.container .right{
+	margin-top: 92px;
+	margin-left: 390px;
+	width: 848px;
+}
+.container .right .first{
+	height: 38px;
+}
+.container .right .first .one{
+	float: left;
+	font-size: 19px;
+	line-height: 2em;
+}
+.container .right .first .two{
+	float: right;
+}
+.container .right .first .two .biaodan{
+	height: 38px;
+	width: 200px;
+}
+/*鞋子*/
+.container .right .second{
+	padding-bottom: 16px;
+	border-bottom: 1px solid #ededed;
+}
+.container .right .second .biaoti{
+	text-align: center;
+	line-height: 2em;
+	font-size: 25px;
+	margin-top: 32px;
+	margin-bottom: 16px;
+}
+.container .right .second .biaoti:hover a{
+	text-decoration-line: underline;
+}
+
+.container .right .second .product ul{
+	overflow: hidden;
+}
+.container .right .second .product ul li{
+	position: relative;
+	float: left;
+	width: 212px;
+	border: 1px solid #fff;
+	box-sizing: border-box;
+}
+/*鼠标悬浮时状态*/
+.container .right .second .product li:hover{
+	border-color: #ededed;
+}
+.container .right .second .product li:hover p{
+	visibility: visible;
+}
+.container .right .second .product li .price:hover a{
+	text-decoration-line: underline;
+}
+.container .right .second .product .pic{
+	font-size: 0;
+}
+.container .right .second .product .pic img{
+	width: 100%;
+}
+.container .right .second .product .kjg{
+	position: absolute;
+	top: 150px;
+	left: 16px;
+	visibility: hidden;
+	margin:0 auto;
+	width: 180px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-weight: bold;
+	background-color: #898383;
+}
+.container .right .second .product .kjg a{
+	color: #fff;
+}
+.container .right .second .product .price{
+	line-height: 2em;
+	text-align: center;
+	font-weight: bold;
+}
+.container .right .second .product .sehao{
+	text-align: center;
+	margin-top: 30px;
+}
+.container .right .second .product .sehao img{
+	width: 25px;
+}
+.container .right .second .product .jieshao{
+	text-align: center;
+	margin-bottom: 20px;
+	color:  #999;
+	visibility:hidden;
+}
+.container .right .second .footer{
+	margin: 16px auto 16px;
+	width: 150px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	font-weight: bold;
+	background-color: red;
+}
+.container .right .second .footer a{
+		color: #fff;
+}
+/*复试或配饰*/
+.container .right .fushi{
+	padding-bottom: 16px;
+	border-bottom: 1px solid #ededed;
+}
+.container .right .fushi .biaoti{
+	text-align: center;
+	line-height: 2em;
+	font-size: 25px;
+	margin-top: 32px;
+	margin-bottom: 16px;
+}
+.container .right .fushi .biaoti:hover a{
+	text-decoration-line: underline;
+}
+
+.container .right .fushi .product ul{
+	overflow: hidden;
+}
+.container .right .fushi .product ul li{
+	position: relative;
+	float: left;
+	width: 212px;
+	box-sizing: border-box;
+	border: 1px solid #fff;
+}
+/*鼠标悬浮时状态*/
+.container .right .fushi .product li:hover{
+	border-color: #ededed;
+}
+.container .right .fushi .product li:hover p{
+	visibility: visible;
+}
+.container .right .fushi .product li .price:hover a{
+	text-decoration-line: underline;
+}
+.container .right .fushi .product .pic{
+	font-size: 0;
+}
+.container .right .fushi .product .pic img{
+	width: 100%;
+}
+.container .right .fushi .product .kjg{
+	position: absolute;
+	top: 180px;
+	left: 16px;
+	visibility: hidden;
+	margin:0 auto;
+	width: 180px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-weight: bold;
+	background-color: rgba(137,131,131,0.9);
+}
+.container .right .fushi .product .kjg a{
+	color: #fff;
+}
+.container .right .fushi .product .price{
+	line-height: 2em;
+	text-align: center;
+	font-weight: bold;
+}
+.container .right .fushi .product .sehao{
+	text-align: center;
+	margin-top: 30px;
+}
+.container .right .fushi .product .sehao img{
+	width: 25px;
+}
+.container .right .fushi .product .jieshao{
+	text-align: center;
+	margin-bottom: 20px;
+	color:  #999;
+	visibility:hidden;
+}
+.container .right .fushi .footer{
+	margin: 16px auto 16px;
+	width: 150px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	font-weight: bold;
+	background-color: red;
+}
+.container .right .fushi .footer a{
+		color: #fff;
+}
+/*专题推荐开始*/
+.container .right .tuijian{
+	padding-bottom: 16px;
+	border-bottom: 1px solid #ededed;
+}
+.container .right .tuijian .biaoti{
+	text-align: center;
+	line-height: 2em;
+	font-size: 25px;
+	margin-top: 32px;
+	margin-bottom: 16px;
+}
+.container .right .tuijian .biaoti:hover a{
+	text-decoration-line: underline;
+}
+
+.container .right .tuijian .product ul{
+	overflow: hidden;
+}
+.container .right .tuijian .product ul li{
+	position: relative;
+	float: left;
+	width: 212px;
+	box-sizing: border-box;
+	border: 1px solid #fff;
+}
+/*鼠标悬浮时状态*/
+.container .right .tuijian .product li:hover{
+	border-color: #ededed;
+}
+.container .right .tuijian .product li:hover p{
+	visibility: visible;
+}
+.container .right .tuijian .product li .price:hover a{
+	text-decoration-line: underline;
+}
+.container .right .tuijian .product .pic{
+	font-size: 0;
+}
+.container .right .tuijian .product .pic img{
+	width: 100%;
+}
+.container .right .tuijian .product .kjg{
+	position: absolute;
+	top: 160px;
+	left: 16px;
+	visibility: hidden;
+	margin:0 auto;
+	width: 180px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-weight: bold;
+	background-color: rgba(137,131,131,0.9);
+}
+.container .right .tuijian .product .kjg a{
+	color: #fff;
+}
+.container .right .tuijian .product .price{
+	line-height: 2em;
+	text-align: center;
+	font-weight: bold;
+}
+.container .right .tuijian .product .sehao{
+	text-align: center;
+	margin-top: 30px;
+}
+.container .right .tuijian .product .sehao img{
+	width: 25px;
+}
+.container .right .tuijian .product .jieshao{
+	text-align: center;
+	margin-bottom: 20px;
+	color:  #999;
+	visibility:hidden;
+}
+.container .right .tuijian .footer{
+	margin: 16px auto 16px;
+	width: 150px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	font-weight: bold;
+	background-color: red;
+}
+.container .right .tuijian .footer a{
+		color: #fff;
+}
+
